@@ -1,112 +1,81 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-
-const AcademicsDropdown = () => {
-  const [open, setOpen] = useState(false);
-  const dropdownRef = useRef();
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  return (
-    <li className="relative cursor-pointer" ref={dropdownRef}>
-      <span onClick={() => setOpen((prev) => !prev)}>ACADEMICS</span>
-      {open && (
-        <div className="absolute left-1/2 transform -translate-x-1/2 md:left-auto md:transform-none bg-white text-black mt-2 p-2 rounded shadow z-10 min-w-[200px] text-left">
-          <Link href="/Academics/Primary" className="block px-4 py-2 hover:bg-gray-100">Primary</Link>
-          <Link href="/Academics/Secondary" className="block px-4 py-2 hover:bg-gray-100">Secondary</Link>
-          <Link href="/Academics/Higher" className="block px-4 py-2 hover:bg-gray-100">Senior Secondary</Link>
-          <Link href="/Cirriculam" className="block px-4 py-2 hover:bg-gray-100">Cirriculam</Link>
-        </div>
-      )}
-    </li>
-  );
-};
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="text-blue-600 font-medium w-full">
-      {/* Top Section */}
-      <div className="bg-white py-4">
-        <div className="mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-          <div className="text-xl mb-2 md:mb-0 md:text-left">Logo</div>
-          <div className="font-bold">School Name</div>
-          <p className="font-bold">Admissions Open 2025 - 2026</p>
+    <header className="w-full bg-white border-b border-gray-200">
+      {/* Container */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] py-5 flex items-center justify-between">
+        {/* Logo */}
+        <p className="text-3xl font-semibold text-[#1f4b43]">LOGO</p>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex justify-start items-center gap-10 text-[#1f4b43] text-base font-medium capitalize">
+          <Link href="/">Home</Link>
+          <Link href="/About">About Us</Link>
+          <Link href="/Properties">Properties</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/contact">Contact Us</Link>
+        </nav>
+
+        {/* Action + Avatar */}
+        <div className="hidden md:flex items-center gap-5">
+          <svg
+            width={41}
+            height={41}
+            viewBox="0 0 41 41"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-10 h-10"
+          >
+            <rect x="1.28027" y={1} width={39} height={39} rx="19.5" stroke="#1F4B43" />
+            {/* You can replace with any profile icon */}
+          </svg>
+          <div className="w-[148.22px] h-[42.5px] relative rounded-full border border-[#1f4b43] flex items-center justify-center">
+            <p className="text-[15px] text-[#1f4b43]">Add Property</p>
+          </div>
         </div>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-[#1f4b43] text-3xl"
+          aria-label="Toggle Menu"
+        >
+          {mobileOpen ? <HiX /> : <HiMenuAlt3 />}
+        </button>
       </div>
 
-      {/* Navigation */}
-      <nav className="bg-sky-400 text-white w-full">
-        <div className="mx-auto px-4">
-          {/* Mobile toggle button */}
-          <div className="md:hidden flex justify-between items-center py-3">
-            <span className="text-lg font-semibold">Menu</span>
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle Menu"
-              className="focus:outline-none"
+      {/* Mobile Nav */}
+      {mobileOpen && (
+        <div className="md:hidden px-6 pb-4 text-[#1f4b43] text-base font-medium capitalize space-y-4">
+          <Link href="/" onClick={() => setMobileOpen(false)}>Home</Link>
+          <Link href="/About" onClick={() => setMobileOpen(false)}>About Us</Link>
+          <Link href="/Properties" onClick={() => setMobileOpen(false)}>Properties</Link>
+          <Link href="/services" onClick={() => setMobileOpen(false)}>Services</Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+          <div className="flex items-center gap-4 pt-4">
+            <svg
+              width={41}
+              height={41}
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-10 h-10"
             >
-              {/* simple hamburger icon */}
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {mobileOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+              <rect x="1.28027" y={1} width={39} height={39} rx="19.5" stroke="#1F4B43" />
+            </svg>
+            <div className="w-full h-[42.5px] rounded-full border border-[#1f4b43] flex items-center justify-center">
+              <p className="text-[15px] text-[#1f4b43]">Add Property</p>
+            </div>
           </div>
-
-          {/* Navigation links */}
-          <ul
-            className={`${
-              mobileOpen ? 'flex flex-col' : 'hidden'
-            } md:flex flex-wrap justify-around items-center w-full py-3 text-sm md:text-base text-center`}
-          >
-            <li className="cursor-pointer py-2 md:py-0">
-              <Link href="/Home">HOME</Link>
-            </li>
-
-            <AcademicsDropdown />
-
-            <li className="relative group cursor-pointer py-2 md:py-0">
-              <span>ABOUT US</span>
-              <div className="absolute left-1/2 transform -translate-x-1/2 md:left-auto md:transform-none hidden group-hover:block bg-white text-black mt-2 p-2 rounded shadow z-10 min-w-[200px] text-left">
-                <Link href="/Faculty" className="block px-4 py-2 hover:bg-gray-100">
-                  Our Faculty
-                </Link>
-                <Link href="/About" className="block px-4 py-2 hover:bg-gray-100">
-                  About Our School
-                </Link>
-              </div>
-            </li>
-
-            <li className="cursor-pointer py-2 md:py-0">
-              <Link href="/Infracstructure">INFRASTRUCTURE AND FACILITIES</Link>
-            </li>
-            <li className="cursor-pointer py-2 md:py-0">
-              <Link href="/Admissions">ADMISSIONS</Link>
-            </li>
-          </ul>
         </div>
-      </nav>
+      )}
     </header>
   );
 };
