@@ -84,44 +84,49 @@ const CustomerReview = () => {
                     </div>
                 </div>
             </section>
-            <section className="w-full py-8 px-4 flex flex-col items-center gap-6">
-                <p className="text-center text-[#1f4b43] text-lg md:text-xl font-medium">
-                    Thousands of world’s leading companies trust Space
-                </p>
 
-                <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 max-w-6xl w-full">
-                    <img
-                        src="/logos/b1.png"
-                        alt="Company 1"
-                        className="h-6 md:h-8 object-contain"
-                    />
-                    <img
-                        src="/logos/b2.png"
-                        alt="Company 2"
-                        className="h-5 md:h-6 object-contain"
-                    />
-                    <img
-                        src="/logos/b3.png"
-                        alt="Company 3"
-                        className="h-10 md:h-12 object-contain"
-                    />
-                    <img
-                        src="/logos/b4.png"
-                        alt="Company 4"
-                        className="h-6 md:h-8 object-contain"
-                    />
-                    <img
-                        src="/logos/b5.png"
-                        alt="Company 5"
-                        className="h-6 md:h-8 object-contain"
-                    />
-                    <img
-                        src="/logos/b6.png"
-                        alt="Company 6"
-                        className="h-7 md:h-9 object-contain"
-                    />
+            
+            <section className="w-full py-8 px-4 bg-white">
+                <div className="max-w-7xl mx-auto flex flex-col items-center gap-6">
+                    <p className="text-center text-[#1f4b43] text-lg md:text-xl font-medium">
+                        Thousands of world’s leading companies trust Space
+                    </p>
+
+                    <div className="w-full flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                        <img
+                            src="/LinkAmazon.png"
+                            alt="Company 1"
+                            className="h-6 md:h-8 object-contain"
+                        />
+                        <img
+                            src="/LinkAMD.png"
+                            alt="Company 2"
+                            className="h-5 md:h-6 object-contain"
+                        />
+                        <img
+                            src="/LinkCisco.png"
+                            alt="Company 3"
+                            className="h-10 md:h-12 object-contain"
+                        />
+                        <img
+                            src="/LinkDropCom.png"
+                            alt="Company 4"
+                            className="h-6 md:h-8 object-contain"
+                        />
+                        <img
+                            src="/LinkLogitech.png"
+                            alt="Company 5"
+                            className="h-6 md:h-8 object-contain"
+                        />
+                        <img
+                            src="/LinkSpotify.png"
+                            alt="Company 6"
+                            className="h-7 md:h-9 object-contain"
+                        />
+                    </div>
                 </div>
             </section>
+
         </>
     );
 };
