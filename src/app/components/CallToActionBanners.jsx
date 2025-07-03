@@ -4,12 +4,12 @@ const CallToActionBanners = () => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 px-4 py-12">
       {/* Left Banner */}
-      <div className="relative bg-[#f9f9f9] rounded-2xl flex-1 p-6 md:p-10 m-4">
-        <div className="max-w-md">
-          <h3 className="text-[26px] font-medium text-[#1f4b43] leading-snug">
+      <div className="relative bg-[#f9f9f9] rounded-2xl flex-1 p-6 md:p-10 w-full">
+        <div className="w-full max-w-md">
+          <h3 className="text-[22px] sm:text-[26px] font-medium text-[#1f4b43] leading-snug">
             Looking for the new <br /> home?
           </h3>
-          <p className="mt-4 text-base text-[#1f4b43] leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-[#1f4b43] leading-relaxed">
             10 new offers every day. 350 offers on site, trusted by a community of thousands of users.
           </p>
           <button className="mt-6 flex items-center gap-2 px-6 py-3 bg-[#1f4b43] text-white rounded-xl hover:opacity-90 transition">
@@ -29,19 +29,19 @@ const CallToActionBanners = () => {
           </button>
         </div>
         <img
-          src="/h47.png" // Replace with correct path
+          src="/h47.png"
           alt="Banner Icon"
-          className="absolute bottom-6 right-6 w-[130px] h-[131px] object-contain"
+          className="absolute bottom-6 right-6 w-20 sm:w-[130px] h-auto object-contain"
         />
       </div>
 
       {/* Right Banner */}
-      <div className="relative bg-[#fff8f6] rounded-2xl flex-1 p-6 md:p-10 m-4">
-        <div className="max-w-md">
-          <h3 className="text-[26px] font-medium text-[#1f4b43] leading-snug">
+      <div className="relative bg-[#fff8f6] rounded-2xl flex-1 p-6 md:p-10 w-full">
+        <div className="w-full max-w-md">
+          <h3 className="text-[22px] sm:text-[26px] font-medium text-[#1f4b43] leading-snug">
             Want to sell your <br /> home?
           </h3>
-          <p className="mt-4 text-base text-[#1f4b43] leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-[#1f4b43] leading-relaxed">
             10 new offers every day. 350 offers on site, trusted by a community of thousands of users.
           </p>
           <button className="mt-6 flex items-center gap-2 px-6 py-3 bg-[#1f4b43] text-white rounded-xl hover:opacity-90 transition">
@@ -61,9 +61,9 @@ const CallToActionBanners = () => {
           </button>
         </div>
         <img
-          src="/h48.png" // Replace with correct path
+          src="/h48.png"
           alt="Banner Icon"
-          className="absolute bottom-6 right-6 w-[130px] h-[131px] object-contain"
+          className="absolute bottom-6 right-6 w-20 sm:w-[130px] h-auto object-contain"
         />
       </div>
     </div>

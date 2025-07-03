@@ -12,22 +12,22 @@ const About = () => {
   {
     name: 'Max Mitchell',
     role: 'Founder',
-    image: 'image-2.png',
+    image: '/Team-1.png',
   },
   {
     name: 'Sarah Johnson',
     role: 'Chief Real Estate Officer',
-    image: 'image.png',
+    image: '/Team-2.png',
   },
   {
     name: 'David Brown',
     role: 'Head of Property Management',
-    image: 'image-3.png',
+    image: '/Team-3.png',
   },
   {
     name: 'Michael Turner',
     role: 'Legal Counsel',
-    image: 'image-4.png',
+    image: '/Team-4.png',
   },
 ];
   return (
